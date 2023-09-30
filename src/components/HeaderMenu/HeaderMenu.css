@@ -1,19 +1,19 @@
-.headerMenu {
+.header__menu {
   padding-top: 55px;
 }
-.headerMenuContainer {
+.header__menu-container {
   display: flex;
   justify-content: space-between;
   width: 1105px;
   margin: 0 auto;
 }
 @media (max-width: 1200px) {
-  .headerMenuContainer {
+  .header__menu-container {
     flex-direction: column;
     width: 40%;
   }
 }
-.headerMenuContainer a {
+.header__menu-container a {
   text-transform: uppercase;
   text-decoration: none;
   color: #fbffff;
@@ -33,30 +33,30 @@
 }
 
 @media (max-width: 1200px) {
-  .headerMenuContainer a {
+  .header__menu-container a {
     font-size: 12px;
     padding: 5px 0;
   }
-  .headerMenuContainer li {
+  .header__menu-container li {
     margin-bottom: 7px;
   }
 }
 
-.headerMenuContainer a:hover {
+.header__menu-container a:hover {
   border: 1px solid #e1a43b;
 }
 
 @media (max-width: 1200px) {
-  .headerMenuContainer a:hover {
+  .header__menu-container a:hover {
     border-bottom: #ffffff;
   }
 }
 
-.headerLink--arrow {
+.header__menu-link--arrow {
   position: relative;
 }
 
-.headerLink--arrow::after {
+.header__menu-link--arrow::after {
   position: absolute;
   content: url('../../images/arrow-down.svg');
   width: 5.5px;
@@ -66,16 +66,16 @@
 }
 
 @media (max-width: 1200px) {
-  .headerLink--arrow::after {
+  .header__menu-link--arrow::after {
     display: none;
   }
 }
 
-.headerLink--like {
+.header__menu-link--like {
   position: relative;
 }
 
-.headerLink--like::after {
+.header__menu-link--like::after {
   position: absolute;
   content: url('../../images/like.svg');
   width: 16px;
@@ -84,15 +84,15 @@
   top: 13px;
 }
 @media (max-width: 1200px) {
-  .headerLink--like::after {
+  .header__menu-link--like::after {
     display: none;
   }
 }
-.headerLink--search {
+.header__menu-link--search {
   position: relative;
 }
 
-.headerLink--search::after {
+.header__menu-link--search::after {
   position: absolute;
   content: url('../../images/search.svg');
   width: 16px;
@@ -102,7 +102,7 @@
 }
 
 @media (max-width: 1200px) {
-  .headerLink--search::after {
+  .header__menu-link--search::after {
     display: none;
   }
 }

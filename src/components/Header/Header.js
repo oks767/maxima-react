@@ -1,8 +1,8 @@
 import React from 'react';
 
-import style from './Header.css';
+import './Header.css';
 
-import logo from '../../images/logo.svg';
+import header__logo from '../../images/logo.svg';
 import flag from '../../images/flag.svg';
 import stars from '../../images/stars.svg';
 import calc from '../../images/calc.svg';
@@ -13,47 +13,60 @@ const Header = () => {
   return (
     <div className='wrapper'>
       <header className='header'>
-        <div className='headerContainer'>
+        <div className='header__container'>
           <a href='#'>
             <img
-              className='logo'
-              src={logo}
+              className='header__logo'
+              src={header__logo}
+              alt='logo img'
             />
           </a>
 
-          <div className='headerRaiting'>
-            <img src={flag} />
-            <div className='headerRaitingInner'>
-              <img src={stars} />
-              <p className='headerRaitingText'>
+          <div className='header__raiting'>
+            <img
+              src={flag}
+              alt='flag img'
+            />
+            <div className='header__raiting-inner'>
+              <img
+                src={stars}
+                alt='stars img'
+              />
+              <p className='header__raiting-text'>
                 <span>Рейтинг в Google</span> <br />
                 на основании 180 отзывов
               </p>
             </div>
           </div>
 
-          <button className='headerButton'>
+          <button className='header__button'>
             <span>Прислать проект на расчет</span>
-            <img src={calc} />
+            <img
+              src={calc}
+              alt='calculator img'
+            />
           </button>
 
-          <div className='headerWhatsapp'>
+          <div className='header__whatsapp'>
             <span>Мы онлайн</span>
             <a href='#'>
-              <img src={social} />
+              <img
+                src={social}
+                alt='whatsapp icon'
+              />
             </a>
           </div>
 
-          <div className='headerContacts'>
+          <div className='header__contacts'>
             <span>Без выходных с 10:00 до 20:00</span>
             <a
-              className='headerTel'
+              className='header__contacts-tel'
               href='tel:+78000000000'
             >
               +7(800)000-00-00
             </a>
             <a
-              className='headerLink'
+              className='header__contacts-link'
               href='#'
             >
               Заказать обратный звонок

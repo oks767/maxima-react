@@ -1,14 +1,14 @@
 import React from 'react';
 
-import style from './HeaderMenu.css';
+import './HeaderMenu.css';
 
 const HeaderMenu = () => {
   return (
-    <div className='headerMenu'>
-      <ul className='headerMenuContainer'>
+    <div className='header__menu'>
+      <ul className='header__menu-container'>
         <li>
           <a
-            className='headerLink headerLink--arrow'
+            className='header__menu-link header__menu-lin--arrow'
             href='#'
           >
             проекты
@@ -22,7 +22,7 @@ const HeaderMenu = () => {
         </li>
         <li>
           <a
-            className='headerLink--arrow'
+            className='header__menu-link header__menu-lin--arrow'
             href='#'
           >
             услуги
@@ -30,7 +30,7 @@ const HeaderMenu = () => {
         </li>
         <li>
           <a
-            className='headerLink--arrow'
+            className='header__menu-link header__menu-lin--arrow'
             href='#'
           >
             заказчику
@@ -41,7 +41,7 @@ const HeaderMenu = () => {
         </li>
         <li>
           <a
-            className='headerLink headerLink--like'
+            className='header__menu-link header__menu-link--like'
             href='#'
           >
             избранное
@@ -49,7 +49,7 @@ const HeaderMenu = () => {
         </li>
         <li>
           <a
-            className='headerLink headerLink--search'
+            className='header__menu-link header__menu-link--search'
             href='#'
           >
             поиск
