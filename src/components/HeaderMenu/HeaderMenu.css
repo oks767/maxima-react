@@ -2,6 +2,9 @@
   padding-top: 55px;
 }
 .header__menu-container {
+  list-style-type: none;
+}
+.header__menu-container {
   display: flex;
   justify-content: space-between;
   width: 1105px;

@@ -1,6 +1,5 @@
 .wrapper {
-  background-color: black;
-  opacity: 0.8;
+  background-color: transparent;
 }
 
 @media (max-width: 1200px) {
@@ -173,4 +172,7 @@
   height: 4px;
   left: -7px;
   top: 0;
+}
+.header__logo {
+  padding-top: 20px;
 }

@@ -1,0 +1,14 @@
+.button {
+  color: #fff;
+  border-radius: 4px;
+  background: #feaa01;
+  padding: 20px 42px;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  margin-top: 42px;
+  cursor: pointer;
+}
+.button img {
+  margin-left: 8px;
+  transition: 0.3s;
+}

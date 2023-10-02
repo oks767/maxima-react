@@ -1,0 +1,218 @@
+.calculator {
+  border-radius: 4.973px 4.973px 99.462px 4.973px;
+  background: #fff;
+  box-shadow: 0px 0px 89.51613px 0px #cacaca;
+  width: 1105px;
+  position: absolute;
+  left: 50%;
+  bottom: -85%;
+  transform: translateX(-50%);
+}
+.calculator__container {
+  display: flex;
+}
+.calculator__bottom {
+  display: flex;
+}
+.calculator__left {
+  width: 70%;
+}
+
+.calculator__right {
+  width: 30%;
+}
+
+.calculator__title {
+  width: 538px;
+  margin: 0;
+  padding-top: 63px;
+  padding-left: 108px;
+  color: #2d2d2f;
+  text-align: center;
+  /* font-family: Gilroy; */
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 100% */
+}
+.calculator__title > span {
+  color: #2d2d2f;
+  /* font-family: Gilroy; */
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+}
+.calculator__line {
+  width: 543.745px;
+  height: 12.219px;
+  flex-shrink: 0;
+  border-radius: 6.109px;
+  margin: 0 auto;
+  background: #eff3f7;
+  position: relative;
+  margin-bottom: 35px;
+  margin-top: 40px;
+}
+.calculator__line::after {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  content: url('../../images/line.svg');
+}
+.calculator__cards {
+  display: flex;
+  width: 543px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.calculator__cards > div {
+  position: relative;
+}
+.calculator__left-title {
+  color: #262425;
+  /* font-family: Gilroy; */
+  font-size: 25.09px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18.817px; /* 75% */
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+.calculator__left-title > h3 {
+  display: inline;
+}
+.calculator__left-title > span {
+  color: #716a6b;
+  border-radius: 6.109px;
+  background: #eff3f7;
+  padding: 4px 8px;
+  margin-right: 18.77px;
+}
+.calculator__bottom {
+  width: 543px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.calculator__bottom-text {
+  display: flex;
+  color: #777779;
+  /* font-family: Gilroy; */
+  font-size: 10.722px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14.255px;
+  align-items: center;
+  align-self: center;
+}
+.calculator__bottom-text span {
+  display: block;
+  font-weight: 600;
+}
+.calculator__bottom-text img {
+  width: 23px;
+  height: 17px;
+  margin-right: 15px;
+}
+
+/* Правая сторона калькулятора */
+.calculator__right-card {
+  border-radius: 61.095px 0px 99px 0px;
+  background: #f5f6fa;
+  padding-right: 30px;
+  margin-top: 51px;
+  padding-bottom: 57px;
+  position: relative;
+}
+.calculator__cards-flag {
+  width: 46px;
+  height: 74px;
+  position: absolute;
+  top: 5.5%;
+  right: 56px;
+  z-index: 1000;
+}
+.calculator__right-card img {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+.calculator__right-title {
+  color: #272627;
+  /* font-family: Gilroy; */
+  font-size: 25.09px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18.817px; /* 75% */
+  text-align: center;
+}
+
+.calculator__right-card > span {
+  color: #a09ea1;
+  /* font-family: Gilroy; */
+  font-size: 13.354px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 10.016px; /* 75% */
+  display: block;
+  text-align: center;
+}
+.calculator__right-text {
+  color: #4b4747;
+  /* font-family: Gilroy; */
+  font-size: 16.025px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12.019px; /* 75% */
+  text-align: center;
+  padding-bottom: 28px;
+}
+.calculator__right-text > span {
+  font-weight: 600;
+}
+.calculator__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+.calculator__list-item {
+  display: flex;
+  border-radius: 32.584px 0px;
+  background: #fff;
+  padding: 12px 22px;
+  align-items: center;
+  align-self: center;
+  margin-bottom: 12px;
+}
+.calculator__list img {
+  width: 22px;
+  height: 20px;
+}
+.calculator__list-item span {
+  color: #f5ba41;
+  /* font-family: Gilroy; */
+  font-size: 41.053px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43.445px; /* 105.828% */
+}
+.calculator__list-item--bg-1 {
+  background-image: url('../../images/item-bg-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.calculator__list-item--bg-2 {
+  background-image: url('../../images/item-bg-2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.calculator__derevo {
+  position: absolute;
+  right: 0;
+  z-index: 1001;
+  top: 70%;
+}
