@@ -2,13 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 export const darkTheme = {
   body: '#000',
   textColor: '#fff',
-  headingColor: 'lightblue',
+  header: '#000',
 };
 
 export const lightTheme = {
   body: '#fff',
   textColor: '#000',
-  headingColor: '#d23669',
+  header: 'transparent',
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -17,7 +17,7 @@ export const GlobalStyles = createGlobalStyle`
   color: ${(props) => props.theme.textColor};
   transition: .3s ease;
  }
- h2{
-   color: ${(props) => props.theme.headingColor};
+ header {
+  background: ${(props) => props.theme.header}
  }
 `;

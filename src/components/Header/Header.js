@@ -16,6 +16,8 @@ const Header = () => {
   const switchTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   };
+  const DarkTheme = 'Dark theme';
+  const LightTheme = 'Light theme';
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
@@ -80,7 +82,12 @@ const Header = () => {
                 Заказать обратный звонок
               </a>
             </div>
-            <button onClick={switchTheme}>Switch theme</button>
+            <button
+              className='header__button-theme'
+              onClick={switchTheme}
+            >
+              {theme === 'light' ? LightTheme : DarkTheme}
+            </button>
           </div>
         </header>
         <HeaderMenu />

@@ -176,3 +176,9 @@
 .header__logo {
   padding-top: 20px;
 }
+.header__button-theme {
+  border-radius: 20px;
+  border: 1px solid #84b73d;
+  background-color: #84b73d;
+  color: #fff;
+}
