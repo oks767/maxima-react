@@ -1,0 +1,82 @@
+.card__wrapper {
+  background-image: url('../../../images/image__card.png');
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.card__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__inner span {
+  border-radius: 12.5px;
+  background: #fff;
+  color: #000;
+  /* font-family: Gilroy; */
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 8.788px; /* 97.645% */
+  padding: 9px;
+}
+.card__title {
+  color: #fff;
+  /* font-family: Gilroy; */
+  font-size: 29.257px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29.257px; /* 100% */
+}
+.card__title span {
+  color: #000;
+  /* font-family: Gilroy; */
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 8.788px; /* 97.645% */
+}
+.card__price {
+  color: #fff;
+}
+.card__price span {
+  color: #fff;
+  /* font-family: Gilroy; */
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12.515px; /* 96.272% */
+}
+.card__price p {
+  color: #fff;
+  /* font-family: Gilroy; */
+  font-size: 29.257px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29.257px; /* 100% */
+  display: inline;
+}
+.house__card-button {
+  color: #fcfcfe;
+  /* font-family: Gilroy; */
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 12.678px; /* 126.779% */
+  text-transform: uppercase;
+  border-radius: 3.321px;
+  background: #73b918;
+  width: 159px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border: none;
+}
+.card__flex {
+  display: flex;
+  justify-content: space-between;
+}

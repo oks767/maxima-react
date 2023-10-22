@@ -1,0 +1,42 @@
+.house__container {
+  width: 1105px;
+  margin: 0 auto;
+}
+.house__title {
+  text-align: center;
+  color: #2d2d2f;
+  text-align: center;
+  /* font-family: Gilroy; */
+  font-size: 47.04px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 47.04px; /* 100% */
+}
+.house__title span {
+  color: #2d2d2f;
+  /* font-family: Gilroy; */
+  font-size: 47.04px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 47.04px;
+}
+.house__cards-wrapper {
+  display: grid;
+  grid-template-columns: 358px 358px 358px;
+  grid-gap: 20px;
+}
+.house__cards-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.house__cards-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.house__cards-three {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
