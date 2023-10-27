@@ -1,6 +1,7 @@
 import React from 'react';
 import HouseCard from './HouseCard/HouseCard';
 import './House.css';
+import FakeApi from '../FakeApi/FakeApi';
 
 const House = () => {
   return (
@@ -53,6 +54,7 @@ const House = () => {
             />
           </div>
         </div>
+        <FakeApi />
       </div>
     </div>
   );
