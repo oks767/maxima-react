@@ -1,8 +1,10 @@
 import React from 'react';
 
 import './HeaderMenu.css';
+import { useNavigate } from 'react-router-dom';
 
 const HeaderMenu = () => {
+  const navigate = useNavigate();
   return (
     <div className='header__menu'>
       <ul className='header__menu-container'>
@@ -18,7 +20,14 @@ const HeaderMenu = () => {
           <a href='#'>фото работ</a>
         </li>
         <li>
-          <a href='#'>акции</a>
+          <a
+            onClick={() => {
+              navigate('/sale');
+            }}
+            href='#'
+          >
+            акции
+          </a>
         </li>
         <li>
           <a

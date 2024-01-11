@@ -1,10 +1,20 @@
 import React from 'react';
 
 import './Button.css';
+import { useNavigate } from 'react-router-dom';
+
 const Button = ({ props }) => {
+  const navigate = useNavigate();
   return (
     <div>
-      <button className='button'>{props}</button>
+      <button
+        onClick={() => {
+          navigate('/calculator');
+        }}
+        className='button'
+      >
+        {props}
+      </button>
     </div>
   );
 };

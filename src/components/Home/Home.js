@@ -9,9 +9,7 @@ import okay from '../../images/okay.svg';
 import list from '../../images/list.svg';
 import derevo from '../../images/Derevo-1.png';
 
-import Calculator from '../Calculator/Calculator';
 import House from '../House/House';
-import Slider from '../Slider/Slider';
 
 const Home = () => {
   const text = 'рассчитать стоимость';
@@ -69,9 +67,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Calculator />
+      {/* <Calculator /> */}
       <House />
-      <Slider />
+      {/* <Slider /> */}
     </>
   );
 };
