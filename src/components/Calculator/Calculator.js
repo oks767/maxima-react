@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './Calculator.css';
 
@@ -8,17 +8,57 @@ import tap from '../../images/tap.svg';
 import men from '../../images/men.png';
 import unlock from '../../images/unlock.svg';
 import lock from '../../images/lock.svg';
-import checked from '../../images/checkbox-cheked.svg';
-import unchecked from '../../images/checkbox-unchecked.svg';
+
 import calcFlag from '../../images/Vector.png';
 import derevo from '../../images/Derevo-2.png';
 
 import Button from '../../UI/Button/Button';
 import Checkbox from '../../UI/Checkbox/Checkbox';
-import House from '../House/House';
+import ProgressBar from '../ProgressBar/ProgressBar';
+import CheckboxArray from '../../UI/Checkbox/CheckboxArray';
 
 const Calculator = () => {
+  const [completed, setCompleted] = useState(0);
+
+  const progressMove = () => {
+    setCompleted((prevCompleted) => {
+      if (prevCompleted + 20 >= 100) {
+        // Логика для завершения
+        return 100;
+      }
+      return prevCompleted + 20;
+    });
+  };
+
+  useEffect(() => {
+    progressMove();
+  }, []);
+
   const text = 'Далее';
+
+  // Checkboxes
+  const [checkedItems, setCheckedItems] = useState({});
+  const handleChange = (event) => {
+    setCheckedItems({
+      ...checkedItems,
+      [event.target.name]: event.target.checked,
+    });
+    console.log('checkedItems: ', checkedItems);
+  };
+  const checkboxes = [
+    {
+      name: 'check-box-1',
+      key: 'checkBox1',
+      label: '',
+      customClass: 'custom-checkbox',
+    },
+    {
+      name: 'check-box-2',
+      key: 'checkBox2',
+      label: '',
+      customClass: 'custom-checkbox',
+    },
+  ];
   return (
     <>
       <div className='calculator__wrapper'>
@@ -34,7 +74,13 @@ const Calculator = () => {
                 Рассчитайте предварительную стоимость{' '}
                 <span>дома за 1 минуту</span>
               </h2>
-              <div className='calculator__line'></div>
+
+              <ProgressBar
+                bgcolor={'#6a1b9a'}
+                completed={completed}
+                increaseWidth={progressMove}
+              />
+
               <div className='calculator__left-title'>
                 <span>01.</span>
                 <h3>Что будем строить?</h3>
@@ -45,14 +91,16 @@ const Calculator = () => {
                     src={home}
                     alt='home img'
                   />
-                  <Checkbox image={checked} />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray />
                 </div>
                 <div>
                   <img
                     src={sauna}
                     alt='sauna img'
                   />
-                  <Checkbox image={unchecked} />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray />
                 </div>
               </div>
 
@@ -68,7 +116,10 @@ const Calculator = () => {
                     следующему вопросу
                   </p>
                 </div>
-                <Button props={text} />
+                <Button
+                  props={text}
+                  clickHandler={progressMove}
+                />
               </div>
             </div>
 

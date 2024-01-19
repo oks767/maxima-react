@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Checkbox.css';
 
-const Checkbox = ({ image }) => {
+const Checkbox = ({ type = 'checkbox', name, checked = false, onChange }) => {
+  console.log('Checkbox: ', name, checked);
+
   return (
-    <div className='wrapper-checbox'>
-      <img
-        src={image}
-        alt='ok icon'
+    <div className='wrapper-checkbox'>
+      <input
+        type={type}
+        name={name}
+        checked={checked}
+        onChange={onChange}
       />
     </div>
   );
