@@ -33,7 +33,7 @@ const Calculator = () => {
   };
 
   useEffect(() => {
-    progressMove();
+    setCompleted(0)
   }, []);
 
   const text = 'Далее';
@@ -72,19 +72,14 @@ const Calculator = () => {
   };
 
   const handleBack = () => {
-    setCurrentStep(currentStep - 1);
+    setCurrentStep((prevStep) => (prevStep - 1 >= 1 ? prevStep - 1 : 1));
+    setCompleted((prevCompleted) => (prevCompleted - 20 >= 0 ? prevCompleted - 20 : 0)); // Уменьшаем прогресс при нажатии "Назад"
   };
   return (
     <>
     
-      {currentStep === 2 && (
-        <div>
-          {/* Дополнительное содержимое для следующего этапа */}
-          <Button props="Назад" clickHandlerNext={handleBack} />
-         
-        </div>
-      )}
-    {currentStep === 1 && (
+      
+    {currentStep <= 5 && (
       <div className='calculator__wrapper'>
         <img
           className='calculator__derevo'
@@ -102,7 +97,7 @@ const Calculator = () => {
               <ProgressBar
                 bgcolor={'#6a1b9a'}
                 completed={completed}
-                increaseWidth={progressMove}
+                // increaseWidth={progressMove}
               />
 
               <div className='calculator__left-title'>
@@ -146,6 +141,13 @@ const Calculator = () => {
                   clickHandlerNext={handleNext}
                   disabled={buttonDisabled}
                 />
+                {currentStep >=2 &&  (
+        <div>
+          {/* Дополнительное содержимое для следующего этапа */}
+          <Button props="Назад" clickHandlerNext={handleBack} />
+         
+        </div>
+      )}
               </div>
             </div>
 
