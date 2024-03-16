@@ -215,3 +215,7 @@
   z-index: 1001;
   top: 70%;
 }
+.calculator__img{
+  width: 250px;
+  border-radius: 61.095px 0px 99px 0px;
+}

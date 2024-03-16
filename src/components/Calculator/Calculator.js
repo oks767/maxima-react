@@ -11,6 +11,7 @@ import lock from '../../images/lock.svg';
 
 import calcFlag from '../../images/Vector.png';
 import derevo from '../../images/Derevo-2.png';
+import window from '../../images/window.jpg'
 
 import Button from '../../UI/Button/Button';
 import Checkbox from '../../UI/Checkbox/Checkbox';
@@ -79,7 +80,7 @@ const Calculator = () => {
     <>
     
       
-    {currentStep <= 5 && (
+    {currentStep <=5 && (
       <div className='calculator__wrapper'>
         <img
           className='calculator__derevo'
@@ -104,9 +105,10 @@ const Calculator = () => {
                 <span>01.</span>
                 <h3>Что будем строить?</h3>
               </div>
+              {currentStep === 1 && (
               <div className='calculator__cards'>
                 <div>
-                  <img
+                  <img className='calculator__img'
                     src={home}
                     alt='home img'
                   />
@@ -115,6 +117,7 @@ const Calculator = () => {
                 </div>
                 <div>
                   <img
+                  className='calculator__img'
                     src={sauna}
                     alt='sauna img'
                   />
@@ -122,7 +125,7 @@ const Calculator = () => {
                   <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
                 </div>
               </div>
-
+)}
               <div className='calculator__bottom'>
                 <div className='calculator__bottom-text'>
                   <img
@@ -141,9 +144,130 @@ const Calculator = () => {
                   clickHandlerNext={handleNext}
                   disabled={buttonDisabled}
                 />
-                {currentStep >=2 &&  (
+                {currentStep ===2 &&  (
         <div>
-          {/* Дополнительное содержимое для следующего этапа */}
+          <div className='calculator__cards'>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={window}
+                    alt='home img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={sauna}
+                    alt='sauna img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+              </div>
+              {/* <Button
+                  props={text}
+                  clickHandler={progressMove}
+                  clickHandlerNext={handleNext}
+                  disabled={buttonDisabled}
+                />
+          <Button props="Назад" clickHandlerNext={handleBack} /> */}
+         
+        </div>
+      )}
+      {currentStep ===3 &&  (
+        <div>
+          <div className='calculator__cards'>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={derevo}
+                    alt='home img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={sauna}
+                    alt='sauna img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+              </div>
+              <Button
+                  props={text}
+                  clickHandler={progressMove}
+                  clickHandlerNext={handleNext}
+                  disabled={buttonDisabled}
+                />
+          <Button props="Назад" clickHandlerNext={handleBack} />
+         
+        </div>
+      )}
+      {currentStep ===4 &&  (
+        <div>
+          <div className='calculator__cards'>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={derevo}
+                    alt='home img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={sauna}
+                    alt='sauna img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+              </div>
+              <Button
+                  props={text}
+                  clickHandler={progressMove}
+                  clickHandlerNext={handleNext}
+                  disabled={buttonDisabled}
+                />
+          <Button props="Назад" clickHandlerNext={handleBack} />
+         
+        </div>
+      )}
+      {currentStep ===5 &&  (
+        <div>
+          <div className='calculator__cards'>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={derevo}
+                    alt='home img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+                <div>
+                  <img
+                  className='calculator__img'
+                    src={sauna}
+                    alt='sauna img'
+                  />
+                  {/* <Checkbox /> */}
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
+                </div>
+              </div>
+              <Button
+                  props={text}
+                  clickHandler={progressMove}
+                  clickHandlerNext={handleNext}
+                  disabled={buttonDisabled}
+                />
           <Button props="Назад" clickHandlerNext={handleBack} />
          
         </div>
