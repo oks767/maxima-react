@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import './Checkbox.css';
 import Checkbox from './Checkbox';
 
-const CheckboxArray = () => {
+const CheckboxArray = ({ handleCheckboxChange }) => {
   const [checkedItems, setCheckedItems] = useState({});
+  
 
   const handleChange = (event) => {
+    const {name, checked} = event.target
     setCheckedItems({
       ...checkedItems,
       [event.target.name]: event.target.checked,
     });
-    console.log('checkedItems: ', checkedItems);
+  handleCheckboxChange(checkedItems)
   };
 
   const checkboxes = [
@@ -32,7 +34,7 @@ const CheckboxArray = () => {
           <label key={item.key}></label>
           <Checkbox
             name={item.name}
-            checked={checkedItems[item.name]}
+            checked={checkedItems[item.name] || false}
             onChange={handleChange}
           />
         </>

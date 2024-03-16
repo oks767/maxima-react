@@ -19,6 +19,8 @@ import CheckboxArray from '../../UI/Checkbox/CheckboxArray';
 
 const Calculator = () => {
   const [completed, setCompleted] = useState(0);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const progressMove = () => {
     setCompleted((prevCompleted) => {
@@ -59,8 +61,30 @@ const Calculator = () => {
       customClass: 'custom-checkbox',
     },
   ];
+
+  const handleCheckboxChange = updatedItems => {
+    const isChecked = Object.values(updatedItems).some(item => item);
+    setButtonDisabled(isChecked);
+  };
+
+  const handleNext = () => {
+    setCurrentStep(currentStep + 1);
+  };
+
+  const handleBack = () => {
+    setCurrentStep(currentStep - 1);
+  };
   return (
     <>
+    
+      {currentStep === 2 && (
+        <div>
+          {/* Дополнительное содержимое для следующего этапа */}
+          <Button props="Назад" clickHandlerNext={handleBack} />
+         
+        </div>
+      )}
+    {currentStep === 1 && (
       <div className='calculator__wrapper'>
         <img
           className='calculator__derevo'
@@ -92,7 +116,7 @@ const Calculator = () => {
                     alt='home img'
                   />
                   {/* <Checkbox /> */}
-                  <CheckboxArray />
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
                 </div>
                 <div>
                   <img
@@ -100,7 +124,7 @@ const Calculator = () => {
                     alt='sauna img'
                   />
                   {/* <Checkbox /> */}
-                  <CheckboxArray />
+                  <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
                 </div>
               </div>
 
@@ -119,6 +143,8 @@ const Calculator = () => {
                 <Button
                   props={text}
                   clickHandler={progressMove}
+                  clickHandlerNext={handleNext}
+                  disabled={buttonDisabled}
                 />
               </div>
             </div>
@@ -168,7 +194,7 @@ const Calculator = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>)}
     </>
   );
 };
