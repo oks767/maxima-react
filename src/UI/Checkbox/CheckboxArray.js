@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Checkbox.css';
 import Checkbox from './Checkbox';
 
@@ -7,13 +7,16 @@ const CheckboxArray = ({ handleCheckboxChange }) => {
   
 
   const handleChange = (event) => {
-    const {name, checked} = event.target
+    const { name, checked } = event.target;
     setCheckedItems({
       ...checkedItems,
-      [event.target.name]: event.target.checked,
+      [name]: checked,
     });
-  handleCheckboxChange(checkedItems)
   };
+
+  useEffect(() => {
+    handleCheckboxChange(checkedItems);
+  }, [checkedItems, handleCheckboxChange]);
 
   const checkboxes = [
     {

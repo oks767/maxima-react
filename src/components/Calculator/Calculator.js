@@ -21,15 +21,15 @@ import CheckboxArray from '../../UI/Checkbox/CheckboxArray';
 const Calculator = () => {
   const [completed, setCompleted] = useState(0);
   const [currentStep, setCurrentStep] = useState(1);
-  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const progressMove = () => {
     setCompleted((prevCompleted) => {
-      if (prevCompleted + 20 >= 100) {
+      if (prevCompleted + 25 >= 100) {
         // Логика для завершения
         return 100;
       }
-      return prevCompleted + 20;
+      return prevCompleted + 25;
     });
   };
 
@@ -42,9 +42,10 @@ const Calculator = () => {
   // Checkboxes
   const [checkedItems, setCheckedItems] = useState({});
   const handleChange = (event) => {
+    const { name, checked } = event.target;
     setCheckedItems({
       ...checkedItems,
-      [event.target.name]: event.target.checked,
+      [name]: checked,
     });
     console.log('checkedItems: ', checkedItems);
   };
@@ -65,7 +66,10 @@ const Calculator = () => {
 
   const handleCheckboxChange = updatedItems => {
     const isChecked = Object.values(updatedItems).some(item => item);
-    setButtonDisabled(isChecked);
+
+  
+
+    setButtonDisabled(isChecked)
   };
 
   const handleNext = () => {
@@ -101,10 +105,10 @@ const Calculator = () => {
                 // increaseWidth={progressMove}
               />
 
-              <div className='calculator__left-title'>
-                <span>01.</span>
-                <h3>Что будем строить?</h3>
-              </div>
+<div className='calculator__left-title'> 
+                  <span>0{currentStep}.</span>
+                  <h3>{currentStep === 1 ? 'Что будем строить?' : 'Дополнительные вопросы'}</h3>
+                </div>
               {currentStep === 1 && (
               <div className='calculator__cards'>
                 <div>
@@ -126,24 +130,7 @@ const Calculator = () => {
                 </div>
               </div>
 )}
-              <div className='calculator__bottom'>
-                <div className='calculator__bottom-text'>
-                  <img
-                    src={tap}
-                    alt='tap img'
-                  />
-
-                  <p>
-                    <span>Нажимайте на вариант ответа</span> и переходите к
-                    следующему вопросу
-                  </p>
-                </div>
-                <Button
-                  props={text}
-                  clickHandler={progressMove}
-                  clickHandlerNext={handleNext}
-                  disabled={buttonDisabled}
-                />
+              
                 {currentStep ===2 &&  (
         <div>
           <div className='calculator__cards'>
@@ -166,13 +153,7 @@ const Calculator = () => {
                   <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
                 </div>
               </div>
-              {/* <Button
-                  props={text}
-                  clickHandler={progressMove}
-                  clickHandlerNext={handleNext}
-                  disabled={buttonDisabled}
-                />
-          <Button props="Назад" clickHandlerNext={handleBack} /> */}
+              
          
         </div>
       )}
@@ -198,13 +179,7 @@ const Calculator = () => {
                   <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
                 </div>
               </div>
-              <Button
-                  props={text}
-                  clickHandler={progressMove}
-                  clickHandlerNext={handleNext}
-                  disabled={buttonDisabled}
-                />
-          <Button props="Назад" clickHandlerNext={handleBack} />
+              
          
         </div>
       )}
@@ -230,13 +205,7 @@ const Calculator = () => {
                   <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
                 </div>
               </div>
-              <Button
-                  props={text}
-                  clickHandler={progressMove}
-                  clickHandlerNext={handleNext}
-                  disabled={buttonDisabled}
-                />
-          <Button props="Назад" clickHandlerNext={handleBack} />
+              
          
         </div>
       )}
@@ -262,17 +231,42 @@ const Calculator = () => {
                   <CheckboxArray handleCheckboxChange={handleCheckboxChange}/>
                 </div>
               </div>
-              <Button
-                  props={text}
-                  clickHandler={progressMove}
-                  clickHandlerNext={handleNext}
-                  disabled={buttonDisabled}
-                />
-          <Button props="Назад" clickHandlerNext={handleBack} />
+              
          
         </div>
       )}
-              </div>
+      <div className='calculator__bottom'>
+                <div className='calculator__bottom-text'>
+                  <img
+                    src={tap}
+                    alt='tap img'
+                  />
+
+                  <p>
+                    <span>Нажимайте на вариант ответа</span> и переходите к
+                    следующему вопросу
+                  </p>
+                </div>
+                <div className='buttons'>
+                {currentStep > 1 && (
+                      <Button
+                        props="Назад"
+                        clickHandlerNext={handleBack}
+                        disabled={false}
+                      />
+                    )}
+      <Button
+                  props={text}
+                  clickHandler={progressMove}
+                  clickHandlerNext={handleNext}
+                  disabled={!buttonDisabled || Object.keys(checkedItems).length === 1}
+  checkboxesSelected={Object.values(checkedItems).some(item => item)}
+                />
+          
+      </div>
+                </div>
+      
+              
             </div>
 
             <div className='calculator__right'>

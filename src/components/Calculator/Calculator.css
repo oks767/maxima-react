@@ -219,3 +219,6 @@
   width: 250px;
   border-radius: 61.095px 0px 99px 0px;
 }
+.buttons{
+  display: flex;
+}

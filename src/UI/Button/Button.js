@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.css';
 import { useNavigate } from 'react-router-dom';
 
-const Button = ({ props, clickHandler, clickHandlerNext, disabled }) => {
+const Button = ({ props, clickHandler, clickHandlerNext, disabled, checkboxesSelected }) => {
   const navigate = useNavigate();
   const handleButtonClick = () => {
     if (!disabled) {
@@ -20,7 +20,7 @@ const Button = ({ props, clickHandler, clickHandlerNext, disabled }) => {
       <button
         onClick={handleButtonClick}
         className='button'
-        disabled={disabled}
+        disabled={disabled || checkboxesSelected}
       >
         {props}
       </button>
