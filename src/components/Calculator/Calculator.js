@@ -26,26 +26,19 @@ const Calculator = () => {
 	}
 	const progressMove = () => {
 		setCompleted(prevCompleted => {
-			if (prevCompleted + 25 >= 100) {
+			if (prevCompleted + 20 >= 100) {
 				// Логика для завершения
 				return 100
 			}
-			return prevCompleted + 25
+			return prevCompleted + 20
 		})
 	}
 
 	useEffect(() => {
-		setCompleted(0)
-	}, [])
+		handleCheckboxChange(checkedItems)
+	}, [checkedItems, handleCheckboxChange])
 
 	const text = 'Далее'
-	const handleChange = event => {
-		const { name, checked } = event.target
-		setCheckedItems({
-			...checkedItems,
-			[name]: checked,
-		})
-	}
 
 	const handleNext = () => {
 		setCurrentStep(currentStep + 1)
@@ -101,8 +94,7 @@ const Calculator = () => {
 											clickHandler={progressMove}
 											clickHandlerNext={handleNext}
 											disabled={
-												!buttonDisabled ||
-												Object.keys(checkedItems).length === 1
+												buttonDisabled || Object.keys(checkedItems).length === 1
 											}
 											checkboxesSelected={Object.values(checkedItems).some(
 												item => item

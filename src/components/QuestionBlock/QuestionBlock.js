@@ -4,16 +4,38 @@ import {
 	default as derevo,
 	default as home,
 	default as sauna,
+	default as window,
 } from '../../images/home.jpg'
 
-const QuestionBlock = ({ currentStepQ, handleCheckboxChange }) => {
+const QuestionBlock = ({
+	currentStepQ,
+	handleCheckboxChange,
+	newTotalCost,
+}) => {
 	const [checkedItems, setCheckedItems] = useState({})
 	const [completed, setCompleted] = useState(0)
 	const [currentStep, setCurrentStep] = useState(1)
+	const [selectedItems, setSelectedItems] = useState({})
+
+	const checkboxes = [
+		{
+			name: 'check-box-1',
+			key: 'checkBox1',
+			label: '',
+			price: Number(100), // пример цены для чекбокса 1
+		},
+		{
+			name: 'check-box-2',
+			key: 'checkBox2',
+			label: '',
+			price: Number(150), // пример цены для чекбокса 2
+		},
+	]
+
 	return (
 		<div>
 			<div className='calculator__left-title'>
-				<span>0{currentStepQ}.</span>
+				<span>1{currentStepQ}.</span>
 				<h3>
 					{currentStep === 1 ? 'Что будем строить?' : 'Дополнительные вопросы'}
 				</h3>
