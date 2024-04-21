@@ -28,6 +28,16 @@ const Calculator = () => {
 	const [completed, setCompleted] = useState(0)
 	const [currentStep, setCurrentStep] = useState(1)
 	const [buttonDisabled, setButtonDisabled] = useState(true)
+	const [totalCost, setTotalCost] = useState(0) // Состояние для хранения итоговой стоимости
+	const prices = {
+		home: 10000,
+		sauna: 5000,
+		windowOne: 2000,
+		windowTwo: 3000,
+		basseinOne: 8000,
+		outOne: 3000,
+		doorOne: 4000,
+	}
 
 	const progressMove = () => {
 		setCompleted(prevCompleted => {
@@ -53,18 +63,37 @@ const Calculator = () => {
 			[event.target.name]: event.target.checked,
 		})
 		console.log('checkedItems: ', checkedItems)
+
+		// Обновляем итоговую стоимость при выборе варианта
+		if (event.target.checked) {
+			setTotalCost(prevCost => prevCost + prices[event.target.name])
+		} else {
+			setTotalCost(prevCost => prevCost - prices[event.target.name])
+		}
 	}
 	const checkboxes = [
 		{
-			name: 'check-box-1',
+			name: 'home',
 			key: 'checkBox1',
-			label: '',
+			label: 'Дом',
 			customClass: 'custom-checkbox',
 		},
 		{
-			name: 'check-box-2',
+			name: 'sauna',
 			key: 'checkBox2',
-			label: '',
+			label: 'Сауна',
+			customClass: 'custom-checkbox',
+		},
+		{
+			name: 'windowOne',
+			key: 'checkBox3',
+			label: 'Пластиковые окна',
+			customClass: 'custom-checkbox',
+		},
+		{
+			name: 'windowTwo',
+			key: 'checkBox4',
+			label: 'Деревянные окна',
 			customClass: 'custom-checkbox',
 		},
 	]
@@ -262,6 +291,7 @@ const Calculator = () => {
 										disabled={buttonDisabled}
 									/>
 								</div>
+								<div>Итоговая стоимость: {totalCost} рублей</div>
 							</div>
 
 							<div className='calculator__right'>
